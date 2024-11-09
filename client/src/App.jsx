@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import AddStudent from './components/AddStudent';
 import StudentList from './components/StudentList';
+import './App.css'
 import axios from 'axios';
 
 function App() {
@@ -40,9 +41,11 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <AddStudent addStudent={addStudent} />
-      <StudentList students={students} deleteStudent={deleteStudent} />
+    <div className="App container mt-4">
+      <div className="inner mx-auto">
+        <AddStudent addStudent={addStudent} />
+        <StudentList students={students} deleteStudent={deleteStudent} />
+      </div>
     </div>
   );
 }

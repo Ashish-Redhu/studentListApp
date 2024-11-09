@@ -1,0 +1,13 @@
+.title{
+    display: grid;
+    grid-template-columns: 1fr auto 1fr; /* Creates three columns: left space, text, right space */
+    align-items: center;
+    justify-content: center;
+    column-gap: 1rem;
+}
+.title::before, .title::after{
+    content: "";
+    height: 2px;
+    background-color: black;
+    display: block;
+}

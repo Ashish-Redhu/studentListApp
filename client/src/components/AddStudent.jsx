@@ -41,6 +41,7 @@ const AddStudent = ({ addStudent }) => {
             value={name}
             onChange={(e) => setName(e.target.value)}
             required
+            style={{border: "2px solid #2A3439"}}
           />
         </div>
         <div className="form-group">
@@ -52,6 +53,7 @@ const AddStudent = ({ addStudent }) => {
             value={age}
             onChange={(e) => setAge(e.target.value)}
             required
+            style={{border: "2px solid #2A3439"}}
           />
         </div>
         <div className="form-group">
@@ -63,6 +65,7 @@ const AddStudent = ({ addStudent }) => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
+            style={{border: "2px solid #2A3439"}}
           />
         </div>
         <button type="submit" className="btn btn-primary mt-3">

@@ -1,9 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
+import './StudentList.css';
 
 const StudentList = ({ students, deleteStudent }) => {
+  // State to manage search query
+  const [searchQuery, setSearchQuery] = useState('');
+
+  // Filtered students based on search query
+  const filteredStudents = students.filter((student) =>
+    student.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    student.email.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   return (
     <div>
-      <h2>Student List</h2>
+      {/* 1.) Heading */}
+      <div className="heading">
+        <h2 className="title">Student List</h2>
+      </div>
+
+      {/* 2.) Searchbar */}
+      <div className="searchbar mb-3">
+        <input
+          type="text"
+          className="form-control"
+          placeholder="Search by Name or Email"
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+        />
+      </div>
+
+      {/* 3.) Table */}
       <table className="table table-bordered">
         <thead>
           <tr>
@@ -14,7 +40,7 @@ const StudentList = ({ students, deleteStudent }) => {
           </tr>
         </thead>
         <tbody>
-          {students.map((student) => (
+          {filteredStudents.map((student) => (
             <tr key={student._id}>
               <td>{student.name}</td>
               <td>{student.age}</td>
