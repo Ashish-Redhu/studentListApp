@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import AddStudent from './components/AddStudent';
 import StudentList from './components/StudentList';
 import './App.css'
+import '@fortawesome/fontawesome-free/css/all.min.css';
+
 import axios from 'axios';
 
 function App() {
@@ -32,13 +34,19 @@ function App() {
   };
 
   const deleteStudent = async (id) => {
-    try {
-      await axios.delete(`${API_URL}/${id}`); // Send DELETE request
-      setStudents(students.filter(student => student._id !== id)); // Remove student from UI
-    } catch (error) {
-      console.error('Error deleting student:', error);
+    // Show confirmation dialog
+    const isConfirmed = window.confirm("Are you sure you want to delete this student?");
+    
+    if (isConfirmed) { // If user confirms
+      try {
+        await axios.delete(`${API_URL}/${id}`); // Send DELETE request
+        setStudents(students.filter(student => student._id !== id)); // Remove student from UI
+      } catch (error) {
+        console.error("Error deleting student:", error);
+      }
     }
   };
+  
 
   const updateStudent = async (id, updatedData) => {
     try {

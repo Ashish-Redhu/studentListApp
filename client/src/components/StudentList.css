@@ -13,6 +13,8 @@
 }
 
 
+/* ---------------------------- To control x-axis overflow  ------------------------- */
+
 /* Parent container to control overflow */
 .table-container {
     width: 100%;  /* Ensure the container takes up the full width */
@@ -41,3 +43,29 @@
     background-color: #f8f9fa;
     font-weight: bold;
   }
+
+/* --------------------------------------------------------------------------------------------- */
+
+
+/* Design Edit and Delete icons */
+.edit-btn{
+  margin-right: 1rem;
+  margin-left: 1rem;
+  border: none;
+  font-size: larger;
+}
+.delete-btn{
+  margin-left: 1rem;
+  border: none;
+  font-size: larger;
+}
+
+
+
+
+
+
+
+
+
+

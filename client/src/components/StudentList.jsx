@@ -125,17 +125,13 @@ const StudentList = ({ students, deleteStudent, updateStudent }) => {
                   <td>{student.age}</td>
                   <td>{student.email}</td>
                   <td>
-                    <button
-                      onClick={() => handleEditClick(student)} // Trigger edit mode for this student
-                      className="btn btn-warning"
-                    >
-                      Edit
+                    <button onClick={() => handleEditClick(student)}
+                      className='edit-btn'>
+                      <i className="fas fa-edit"></i> {/* Edit icon */}
                     </button>
-                    <button
-                      onClick={() => deleteStudent(student._id)} // Trigger deleteStudent function
-                      className="btn btn-danger ml-2"
-                    >
-                      Delete
+                    <button onClick={() => deleteStudent(student._id)}
+                      className='delete-btn'>
+                      <i className="fas fa-trash-alt"></i> {/* Delete icon */}
                     </button>
                   </td>
                 </>
