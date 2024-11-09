@@ -11,3 +11,33 @@
     background-color: black;
     display: block;
 }
+
+
+/* Parent container to control overflow */
+.table-container {
+    width: 100%;  /* Ensure the container takes up the full width */
+    overflow-x: auto;  /* Allows horizontal scroll if the table overflows */
+  }
+  
+  /* Table should take full width of the container */
+  table {
+    width: 100%;  /* Table takes up the full width */
+    table-layout: fixed;  /* Ensures columns have a fixed width, preventing overflow */
+    margin-left: auto;  /* Center the table */
+    margin-right: auto;
+    border-collapse: collapse;  /* Collapse table borders */
+  }
+  
+  /* Allow long text to wrap inside table cells */
+  td, th {
+    word-wrap: break-word;  /* Break long words to prevent overflow */
+    overflow-wrap: break-word;
+    white-space: normal;  /* Allow text to wrap in cells */
+    padding: 8px;  /* Add padding for better readability */
+  }
+  
+  /* Header styling */
+  th {
+    background-color: #f8f9fa;
+    font-weight: bold;
+  }

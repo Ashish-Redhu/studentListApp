@@ -40,11 +40,24 @@ function App() {
     }
   };
 
+  const updateStudent = async (id, updatedData) => {
+    try {
+      const response = await axios.put(`${API_URL}/${id}`, updatedData); // PUT request to update student
+      fetchStudents();
+      
+      // setStudents(students.map(student => student._id === id ? response.data : student)); 
+      // Update UI with the edited student
+    } catch (error) {
+      console.error('Error updating student:', error);
+    }
+  };
+  
+
   return (
     <div className="App container mt-4">
-      <div className="inner mx-auto">
+      <div className="inner mx-auto col-12 col-md-10 col-lg-8">
         <AddStudent addStudent={addStudent} />
-        <StudentList students={students} deleteStudent={deleteStudent} />
+        <StudentList students={students} deleteStudent={deleteStudent} updateStudent={updateStudent} />
       </div>
     </div>
   );
