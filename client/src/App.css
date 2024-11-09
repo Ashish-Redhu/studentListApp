@@ -8,6 +8,7 @@
 
 @media (max-width: 450px){
     .inner{
-        padding: auto 0;
+        padding: 0px;
+        box-shadow: none;
     }
 }
