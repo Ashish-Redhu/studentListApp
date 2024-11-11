@@ -14,10 +14,10 @@ const AddStudent = ({ addStudent }) => {
 
     try {
       // Send POST request to add the student
-      const response = await axios.post(`${API_URL}/add`, newStudent);
+      // const response = await axios.post(`${API_URL}/add`, newStudent);
       
       // Call addStudent prop to update the list in parent component
-      addStudent(response.data); // Directly update the state in App.jsx
+      addStudent(newStudent); // Directly update the state in App.jsx
 
       // Clear form fields after adding the student
       setName('');
