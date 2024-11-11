@@ -5,6 +5,10 @@ const router = express.Router();
 // Route to add a new student
 router.post('/add', async (req, res) => {
   const { name, age, email } = req.body;
+   // Validation or any other logic
+  if (!name || !age || !email) {
+    return res.status(400).json({ message: 'All fields are required' });
+  }
 
   const newStudent = new Student({
     name,

@@ -3,7 +3,6 @@ import AddStudent from './components/AddStudent';
 import StudentList from './components/StudentList';
 import './App.css'
 import '@fortawesome/fontawesome-free/css/all.min.css';
-
 import axios from 'axios';
 
 function App() {
@@ -27,6 +26,7 @@ function App() {
   const addStudent = async (newStudent) => {
     try {
       const response = await axios.post(`${API_URL}/add`, newStudent); // Add student to backend
+      console.log("Added Student", response.data);
       setStudents((prevStudents) => [...prevStudents, response.data]); // Update UI with new student
     } catch (error) {
       console.error('Error adding student:', error);
