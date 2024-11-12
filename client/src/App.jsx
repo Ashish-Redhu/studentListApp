@@ -25,7 +25,9 @@ function App() {
 
   const addStudent = async (newStudent) => {
     try {
-      const response = await axios.post(`${API_URL}/add`, newStudent); // Add student to backend
+
+      const response = await axios.post(`${API_URL}/add`, newStudent); 
+      // Add student to backend
       console.log("Added Student", response.data);
       setStudents((prevStudents) => [...prevStudents, response.data]); // Update UI with new student
     } catch (error) {
