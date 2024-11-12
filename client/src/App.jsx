@@ -14,6 +14,7 @@ function App() {
     fetchStudents();
   }, []);
 
+  // Fetch students.
   const fetchStudents = async () => {
     try {
       const response = await axios.get(`${API_URL}`);
@@ -22,12 +23,11 @@ function App() {
       console.error('Error fetching students:', error);
     }
   };
-
+ 
+  // Addd a new student.
   const addStudent = async (newStudent) => {
     try {
-
-      const response = await axios.post(`${API_URL}/add`, newStudent); 
-      // Add student to backend
+      const response = await axios.post(`${API_URL}/add`, newStudent); // Add student to backend
       console.log("Added Student", response.data);
       setStudents((prevStudents) => [...prevStudents, response.data]); // Update UI with new student
     } catch (error) {
@@ -35,6 +35,7 @@ function App() {
     }
   };
 
+  // Delete a student.
   const deleteStudent = async (id) => {
     // Show confirmation dialog
     const isConfirmed = window.confirm("Are you sure you want to delete this student?");
@@ -49,7 +50,7 @@ function App() {
     }
   };
   
-
+  // Update a student's details.
   const updateStudent = async (id, updatedData) => {
     try {
       const response = await axios.put(`${API_URL}/${id}`, updatedData); // PUT request to update student

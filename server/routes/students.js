@@ -2,6 +2,8 @@ const express = require('express');
 const Student = require('../models/Student'); // Import the student model
 const router = express.Router();
 
+
+// /api/students : default path which represents "/" here. 
 // Route to add a new student
 router.post('/add', async (req, res) => {
   const { name, age, email } = req.body;

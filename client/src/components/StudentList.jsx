@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import "./StudentList.css";
-const StudentList = ({ students, deleteStudent, updateStudent }) => {
+const StudentList = ({ students=[], deleteStudent, updateStudent }) => {
   const [editingStudent, setEditingStudent] = useState(null); // Track which student is being edited
   const [editedData, setEditedData] = useState({
     name: '',
@@ -41,10 +41,12 @@ const StudentList = ({ students, deleteStudent, updateStudent }) => {
   };
 
   // Filter students based on the search query
-  const filteredStudents = students.filter((student) =>
-    student.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    student.email.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+  const filteredStudents = Array.isArray(students)
+  ? students.filter((student) =>
+      student.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      student.email.toLowerCase().includes(searchQuery.toLowerCase())
+    )
+  : [];
 
   return (
     <div>

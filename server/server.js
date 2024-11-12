@@ -22,9 +22,9 @@ app.listen(PORT, () => {
 
 
 // Sample route to confirm server setup
-app.get('/', (req, res) => {
-    res.send('Student List App backend is running');
-});
+// app.get('/', (req, res) => {
+//     res.send('Student List App backend is running');
+// });
 
 // Import the routes
 const studentRoutes = require('./routes/students');
